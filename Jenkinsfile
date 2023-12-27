@@ -1,8 +1,6 @@
 node {
     docker.image('node:16-buster-slim').inside('-p 3000:3000') {
         stage('Build') {
-            sh 'npm cache clean -f'
-            sh 'rm -rf node_modules'
             sh 'npm install'
         }
         stage('Test') {
