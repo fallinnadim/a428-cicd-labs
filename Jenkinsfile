@@ -6,12 +6,12 @@ node {
         stage('Test') {
             sh './jenkins/scripts/test.sh'
         }
-        // stage('Manual Approval') {
-        //     input message: 'Lanjut ke tahap Deploy? (Klik "Proceed" untuk mengakhiri)' 
-        // }
-        // stage('Deploy') {
-        //     sh './jenkins/scripts/deliver.sh'
-        // }
+        stage('Manual Approval') {
+            input message: 'Lanjut ke tahap Deploy? (Klik "Proceed" untuk mengakhiri)' 
+        }
+        stage('Deploy') {
+            sh './jenkins/scripts/deliver.sh'
+        }
     }
 }
 // pipeline {
