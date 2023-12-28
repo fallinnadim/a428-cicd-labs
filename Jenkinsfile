@@ -32,5 +32,16 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
+        stage('Manual Approval') {
+            steps {
+                input message: 'Lanjut ke tahap Deploy? (Klik "Proceed" untuk mengakhiri)' 
+            }
+            
+        }
+        stage('Deploy') {
+            steps {
+                sh './jenkins/scripts/deliver.sh'
+            }
+        }
     }
 }
