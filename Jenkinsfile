@@ -22,7 +22,7 @@ pipeline {
     //     }
     // }
     agent {
-        label 'awsmachine'
+        label 'awsec2'
     }
     stages {
         stage('Build') {
