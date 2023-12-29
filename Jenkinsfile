@@ -15,12 +15,13 @@
 //     }
 // }
 pipeline {
-    agent {
-        docker {
-            image 'node:16-buster-slim'
-            args '-p 3000:3000'
-        }
-    }
+    // agent {
+    //     docker {
+    //         image 'node:16-buster-slim'
+    //         args '-p 3000:3000'
+    //     }
+    // }
+    agent any
     stages {
         stage('Build') {
             steps {
@@ -32,16 +33,16 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
             }
         }
-        stage('Manual Approval') {
-            steps {
-                input message: 'Lanjut ke tahap Deploy? (Klik "Proceed" untuk mengakhiri)' 
-            }
+        // stage('Manual Approval') {
+        //     steps {
+        //         input message: 'Lanjut ke tahap Deploy? (Klik "Proceed" untuk mengakhiri)' 
+        //     }
             
-        }
-        stage('Deploy') {
-            steps {
-                sh './jenkins/scripts/deliver.sh'
-            }
-        }
+        // }
+        // stage('Deploy') {
+        //     steps {
+        //         sh './jenkins/scripts/deliver.sh'
+        //     }
+        // }
     }
 }
