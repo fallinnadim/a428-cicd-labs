@@ -9,7 +9,7 @@ const App = () => {
     var diffSeconds = Math.ceil(timeDiff / 60000); 
     const [counter, setCounter] = useState(diffSeconds);
     useEffect(() => {
-      counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+      counter > 0 && setTimeout(() => setCounter(counter - 1), 60000);
     }, [counter]);
   return (
     <div className="App">
