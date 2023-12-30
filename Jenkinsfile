@@ -37,14 +37,6 @@ pipeline {
                 input message: 'Lanjut ke tahap Deploy? (Klik "Proceed" untuk mengakhiri)' 
             }
         }
-        stage('Deploy') {
-            steps {
-                sshagent(credentials: ['asdf']) {
-                    sh 'mkdir /home/ubuntu/hehe'
-                    sh 'echo hehe'
-                }
-            }
-        }
         // stage('Deploy') {
         //     steps {
         //         sh './jenkins/scripts/deliver.sh'
